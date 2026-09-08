@@ -228,12 +228,7 @@ class MoviesApiTest {
     void postMovie_withWrongContentType_returns415()
             throws Exception {
 
-        String json = """
-                {
-                    "title": "Interstellar",
-                    "year": 2014
-                }
-                """;
+        String json = "{\"title\":\"Interstellar\",\"year\":2014}";
 
         HttpRequest request =
                 HttpRequest.newBuilder()
