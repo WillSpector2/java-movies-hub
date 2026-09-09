@@ -85,9 +85,7 @@ public class MoviesHandler extends BaseHttpHandler {
         );
     }
 
-    private void handleGetMovies(
-            HttpExchange exchange
-    ) throws IOException {
+    private void handleGetMovies(HttpExchange exchange) throws IOException {
 
         String query = exchange.getRequestURI().getRawQuery();
 
@@ -129,9 +127,7 @@ public class MoviesHandler extends BaseHttpHandler {
         }
     }
 
-    private void handlePostMovie(
-            HttpExchange exchange
-    ) throws IOException {
+    private void handlePostMovie(HttpExchange exchange) throws IOException {
 
         if (!isJsonContentType(exchange)) {
             sendError(
@@ -197,10 +193,7 @@ public class MoviesHandler extends BaseHttpHandler {
         );
     }
 
-    private void handleGetMovieById(
-            HttpExchange exchange,
-            String idString
-    ) throws IOException {
+    private void handleGetMovieById(HttpExchange exchange, String idString) throws IOException {
 
         Long id = parseId(idString);
 
@@ -231,10 +224,7 @@ public class MoviesHandler extends BaseHttpHandler {
         );
     }
 
-    private void handleDeleteMovie(
-            HttpExchange exchange,
-            String idString
-    ) throws IOException {
+    private void handleDeleteMovie(HttpExchange exchange, String idString) throws IOException {
 
         Long id = parseId(idString);
 
@@ -306,9 +296,7 @@ public class MoviesHandler extends BaseHttpHandler {
         }
     }
 
-    private String readBody(
-            HttpExchange exchange
-    ) throws IOException {
+    private String readBody(HttpExchange exchange) throws IOException {
 
         try (InputStream inputStream =
                      exchange.getRequestBody()) {
@@ -320,10 +308,7 @@ public class MoviesHandler extends BaseHttpHandler {
         }
     }
 
-    private String getQueryParameter(
-            String query,
-            String parameter
-    ) {
+    private String getQueryParameter(String query, String parameter) {
 
         for (String pair : query.split("&")) {
 
